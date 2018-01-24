@@ -13,7 +13,6 @@ class random_test_case:
 
     def generate_random_case(self, max_str_len =5):
         random_case = {}
-        print(self.fields_scheme)
         for field_name in self.fields_scheme:
             random_case.update({field_name: self.random_str(max_str_len)})
         return random_case
