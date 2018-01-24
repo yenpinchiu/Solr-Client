@@ -1,19 +1,19 @@
-import requests
 import json
+import requests
 
 UPDATE_HANDLER = "update/json?commit=true"
 SOLR_URL = "http://{}:{}/solr"
 
-class Solr_client:
+class SolrClient(object):
     def __init__(self, host="localhost", port=8983):
         self.host = host
         self.port = port
         self.url = SOLR_URL.format(host, port)
         self.update_handler = UPDATE_HANDLER
-        
+
     def update(self, collection_name, data):
         '''
-        data (dict): A dict object which will be updated to the specific solr collection as a structured document. 
+        data (dict): A dict object which will be updated to the specific solr collection as a structured document.
         collection_name(str): Name of the target collection.
         '''
         post_data_str = str(json.dumps([data]))
