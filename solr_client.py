@@ -3,7 +3,7 @@ import json
 
 UPDATE_HANDLER = "update/json?commit=true"
 
-class solr_client:
+class Solr_client:
     def __init__(self, host="localhost", port=8983):
         self.host = host
         self.port = port
